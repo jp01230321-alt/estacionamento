@@ -18,7 +18,7 @@ import javax.swing.table.JTableHeader;
 import controller.EstacionamentoController;
 import model.Veiculo;
 
-/** JTable de veículos reutilizada pelas telas. */
+
 public class TabelaVeiculos extends JScrollPane {
 
     private static final long serialVersionUID = 1L;
@@ -52,7 +52,7 @@ public class TabelaVeiculos extends JScrollPane {
             tabela.getColumnModel().getColumn(i).setPreferredWidth(larguras[i]);
         }
 
-        // Células
+       
         tabela.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
             private static final long serialVersionUID = 1L;
             @Override
@@ -71,7 +71,7 @@ public class TabelaVeiculos extends JScrollPane {
             }
         });
 
-        // Cabeçalho
+      
         JTableHeader cabecalho = tabela.getTableHeader();
         cabecalho.setReorderingAllowed(false);
         cabecalho.setPreferredSize(new Dimension(0, 38));
