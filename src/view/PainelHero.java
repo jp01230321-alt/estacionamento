@@ -14,7 +14,6 @@ import java.awt.geom.RoundRectangle2D;
 
 import javax.swing.JPanel;
 
-/** Cartão laranja com um carro desenhado em Java2D. */
 public class PainelHero extends JPanel {
 
     private static final long serialVersionUID = 1L;
@@ -30,12 +29,12 @@ public class PainelHero extends JPanel {
         int w = getWidth();
         int h = getHeight();
 
-        // Fundo laranja arredondado
+       
         Shape cartao = new RoundRectangle2D.Float(0, 0, w, h, 28, 28);
         g2.setColor(Tema.LARANJA);
         g2.fill(cartao);
 
-        // Marcas de pneu na parte de baixo
+        
         g2.setClip(cartao);
         g2.clipRect(0, (int) (h * 0.68), w, h);
         g2.setColor(new Color(255, 255, 255, 30));
@@ -45,7 +44,7 @@ public class PainelHero extends JPanel {
         }
         g2.setClip(null);
 
-        // Selo "P" de estacionamento
+        
         g2.setColor(Tema.INDIGO);
         g2.fill(new RoundRectangle2D.Float(24, 24, 44, 44, 12, 12));
         g2.setColor(Color.WHITE);
@@ -54,7 +53,7 @@ public class PainelHero extends JPanel {
         g2.drawString("P", 24 + (44 - fm.stringWidth("P")) / 2,
                 24 + (44 + fm.getAscent() - fm.getDescent()) / 2);
 
-        // Carro (desenhado em um espaço de 400 x 200 e escalado)
+       
         double escala = Math.min(w * 0.86 / 400.0, h * 0.52 / 200.0);
         g2.translate((w - 400 * escala) / 2.0, h * 0.30);
         g2.scale(escala, escala);
