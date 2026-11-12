@@ -44,7 +44,7 @@ public class TelaPrincipal extends JFrame {
         this.controller = controller;
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        // Fundo: faixa cinza em cima e branco embaixo, como no layout de referência
+        
         JPanel raiz = new JPanel(new BorderLayout()) {
             private static final long serialVersionUID = 1L;
             @Override
@@ -83,7 +83,7 @@ public class TelaPrincipal extends JFrame {
         setLocationRelativeTo(null);
     }
 
-    // ---------- Montagem da tela ----------
+   
 
     private JPanel montarCabecalho() {
         JPanel cabecalho = new JPanel(new BorderLayout());
@@ -99,7 +99,7 @@ public class TelaPrincipal extends JFrame {
         btConsulta.addActionListener(e -> abrir(new TelaConsulta(this.controller, this)));
         btSaida.addActionListener(e -> abrir(new TelaSaida(this.controller, this)));
         btRelatorio.addActionListener(e -> abrir(new TelaRelatorio(this.controller, this)));
-        // Relatório (faturamento) é restrito à gerência
+        
         if (!controller.podeVerRelatorio()) {
             btRelatorio.setEnabled(false);
             btRelatorio.setToolTipText("Disponível somente para a gerência");
@@ -254,9 +254,7 @@ public class TelaPrincipal extends JFrame {
         return l;
     }
 
-    // ---------- Ações ----------
-
-    /** Atualiza os números da barra de resumo (chamado ao voltar de outra tela). */
+  
     public void atualizarResumo() {
         lblEstacionados.setText(String.valueOf(controller.getQuantidadeEstacionados()));
         lblVagas.setText(controller.getVagasDisponiveis() + " de " + controller.getCapacidade());
@@ -274,7 +272,7 @@ public class TelaPrincipal extends JFrame {
         dispose();
     }
 
-    /** Quadrado arredondado com o número do passo. */
+   
     private static class Ladrilho extends JPanel {
 
         private static final long serialVersionUID = 1L;
