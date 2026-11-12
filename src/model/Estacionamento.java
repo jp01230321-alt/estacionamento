@@ -13,7 +13,7 @@ public class Estacionamento {
     private final ArrayList<Veiculo> veiculos = new ArrayList<>();
     private double faturamento = 0;
 
-    /** Cadastra a entrada de um veículo. */
+  
     public Veiculo registrarEntrada(String placa, String modelo, LocalDateTime entrada) {
         if (buscarEstacionado(placa) != null) {
             throw new IllegalArgumentException("Já existe um veículo estacionado com a placa " + placa + ".");
