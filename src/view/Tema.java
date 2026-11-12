@@ -25,12 +25,11 @@ import javax.swing.JTextField;
 import javax.swing.border.AbstractBorder;
 import javax.swing.border.EmptyBorder;
 
-/** Cores, fontes e componentes visuais reutilizados em todas as telas. */
 public final class Tema {
 
     private Tema() { }
 
-    // ----- Paleta (inspirada no layout de referência) -----
+   
     public static final Color LARANJA = new Color(0xFF5B35);
     public static final Color LARANJA_CLARO = new Color(0xFFE6DE);
     public static final Color INDIGO = new Color(0x464A9E);
@@ -46,7 +45,7 @@ public final class Tema {
         return new Font("Segoe UI", estilo, tamanho);
     }
 
-    // ----- Textos -----
+ 
     public static JLabel titulo(String texto, int tamanho) {
         JLabel l = new JLabel(texto);
         l.setFont(fonte(Font.BOLD, tamanho));
@@ -94,7 +93,7 @@ public final class Tema {
         return p;
     }
 
-    // ----- Campos -----
+   
     public static void campo(JTextField c) {
         c.setFont(fonte(Font.PLAIN, 15));
         c.setForeground(TEXTO);
@@ -118,12 +117,12 @@ public final class Tema {
         return p;
     }
 
-    // ----- Botões -----
+   
     public static Botao primario(String texto) { return new Botao(texto, Botao.Tipo.PRIMARIO); }
     public static Botao secundario(String texto) { return new Botao(texto, Botao.Tipo.SECUNDARIO); }
     public static Botao destaque(String texto) { return new Botao(texto, Botao.Tipo.LARANJA); }
 
-    /** Botão de texto simples (menu de navegação). */
+    
     public static JButton link(String texto) {
         JButton b = new JButton(texto);
         b.setContentAreaFilled(false);
@@ -149,7 +148,7 @@ public final class Tema {
         return b;
     }
 
-    /** Botão com cantos arredondados. */
+  
     public static class Botao extends JButton {
 
         private static final long serialVersionUID = 1L;
@@ -200,7 +199,6 @@ public final class Tema {
         }
     }
 
-    /** Painel com cantos arredondados e sombra suave (cartão). */
     public static class Cartao extends JPanel {
 
         private static final long serialVersionUID = 1L;
@@ -238,7 +236,7 @@ public final class Tema {
         }
     }
 
-    /** Borda fina com cantos arredondados (campos de texto). */
+   
     public static class BordaArredondada extends AbstractBorder {
 
         private static final long serialVersionUID = 1L;
