@@ -57,7 +57,7 @@ public class EstacionamentoController {
     public List<Veiculo> listarEstacionados() { return estacionamento.listarEstacionados(); }
     public List<Veiculo> listarTodos() { return estacionamento.listarTodos(); }
 
-    /** Calcula permanência e valor sem registrar a saída. */
+   
     public String previaSaida(String placa, String data, String hora) {
         Veiculo v = localizarEstacionado(placa);
         LocalDateTime saida = converter(data, hora);
@@ -66,7 +66,7 @@ public class EstacionamentoController {
         return resumo(v, saida, d, estacionamento.calcularValor(d));
     }
 
-    /** Registra a saída e devolve o resumo da cobrança. */
+    
     public String registrarSaida(String placa, String data, String hora) {
         Veiculo v = localizarEstacionado(placa);
         LocalDateTime saida = converter(data, hora);
@@ -75,7 +75,7 @@ public class EstacionamentoController {
         return resumo(v, saida, d, v.getValorCobrado());
     }
 
-    // ---------- Relatório ----------
+   
 
     public int getQuantidadeEstacionados() { return estacionamento.getQuantidadeEstacionados(); }
     public int getVagasDisponiveis() { return estacionamento.vagasDisponiveis(); }
@@ -84,7 +84,7 @@ public class EstacionamentoController {
     public String getFaturamento() { return moeda(estacionamento.getFaturamento()); }
     public String getTarifa() { return moeda(Estacionamento.TARIFA_POR_HORA); }
 
-    // ---------- Apoio à View ----------
+   
 
     public String dataAtual() { return LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")); }
     public String horaAtual() { return LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm")); }
@@ -104,7 +104,7 @@ public class EstacionamentoController {
         };
     }
 
-    // ---------- Internos ----------
+  
 
     private Veiculo localizarEstacionado(String placa) {
         String p = normalizarPlaca(placa);
