@@ -15,7 +15,7 @@ import javax.swing.border.EmptyBorder;
 
 import controller.EstacionamentoController;
 
-/** Base das telas secundárias: layout padrão e retorno à tela principal. */
+
 public abstract class TelaBase extends JFrame {
 
     private static final long serialVersionUID = 1L;
@@ -34,7 +34,7 @@ public abstract class TelaBase extends JFrame {
         });
     }
 
-    /** Monta cabeçalho, cartão com o corpo e rodapé com as ações (o botão Voltar é sempre incluído). */
+   
     protected void montarTela(String titulo, String subtitulo, JComponent corpo, JButton... acoes) {
         JPanel raiz = new JPanel(new BorderLayout(0, 14));
         raiz.setBackground(Tema.FUNDO);
