@@ -1,12 +1,37 @@
-# 🚗 ParkControl — Sistema de Controle de Estacionamento
+<div align="center">
 
-![Java](https://img.shields.io/badge/Java-11%2B-orange?logo=openjdk&logoColor=white)
-![Swing](https://img.shields.io/badge/Interface-Java%20Swing-464A9E)
-![MVC](https://img.shields.io/badge/Arquitetura-MVC-FF5B35)
-![Armazenamento](https://img.shields.io/badge/Dados-Em%20mem%C3%B3ria-lightgrey)
+# 🚗 ParkControl
 
-**Disciplina:** Iniciação à Programação
-**Grupo:** 08 — Sistema de Controle de Estacionamento
+### Sistema de Controle de Estacionamento
+
+Controle de **entrada e saída de veículos**, **ocupação de vagas** e **cobrança por tempo de permanência**.
+
+![Java](https://img.shields.io/badge/Java-11%2B-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Swing](https://img.shields.io/badge/Interface-Java%20Swing-464A9E?style=for-the-badge)
+![MVC](https://img.shields.io/badge/Arquitetura-MVC-FF5B35?style=for-the-badge)
+![Memória](https://img.shields.io/badge/Dados-Em%20mem%C3%B3ria-6B7280?style=for-the-badge)
+
+**Disciplina:** Iniciação à Programação  •  **Grupo 08**
+
+[🖼️ Telas](#telas) • [✨ Funcionalidades](#funcionalidades) • [🔐 Acesso](#acesso) • [🏗️ Arquitetura](#arquitetura) • [▶️ Como executar](#executar) • [🧪 Testes](#testes)
+
+</div>
+
+---
+
+## 📌 Em resumo
+
+| | |
+|---|---|
+| **O que é** | Aplicação desktop para gerenciar um estacionamento |
+| **Quem usa** | Apenas **gerência** e **funcionários** (o cliente não acessa o sistema) |
+| **Tecnologia** | Java SE puro + Java Swing |
+| **Arquitetura** | MVC (`model`, `view`, `controller`) |
+| **Armazenamento** | Somente em memória (`ArrayList`) |
+| **Tarifa** | R$ 5,00 por hora ou fração |
+| **Vagas** | 20 |
+
+---
 
 ## 👥 Integrantes
 
@@ -21,128 +46,158 @@
 
 ---
 
+<a id="telas"></a>
+
 ## 🖼️ Telas do sistema
 
-<table>
-  <tr>
-    <td align="center" width="20%">
-      <a href="docs/01-login.png"><img src="docs/01-login.png" alt="Tela de login" width="100%"></a><br>
-      <sub><b>1. Login</b></sub>
-    </td>
-    <td align="center" width="20%">
-      <a href="docs/02-tela-principal.png"><img src="docs/02-tela-principal.png" alt="Tela principal" width="100%"></a><br>
-      <sub><b>2. Tela principal</b></sub>
-    </td>
-    <td align="center" width="20%">
-      <a href="docs/03-entrada.png"><img src="docs/03-entrada.png" alt="Entrada de veículos" width="100%"></a><br>
-      <sub><b>3. Entrada de veículos</b></sub>
-    </td>
-    <td align="center" width="20%">
-      <a href="docs/04-saida.png"><img src="docs/04-saida.png" alt="Registro de saída" width="100%"></a><br>
-      <sub><b>4. Registro de saída</b></sub>
-    </td>
-    <td align="center" width="20%">
-      <a href="docs/05-relatorio.png"><img src="docs/05-relatorio.png" alt="Relatório operacional" width="100%"></a><br>
-      <sub><b>5. Relatório operacional</b></sub>
-    </td>
-  </tr>
-</table>
+> 💡 Clique em qualquer imagem para abri-la em tamanho original.
 
-> Clique em uma imagem para vê-la em tamanho grande.
+### 1️⃣ Login
+
+Acesso restrito: o usuário escolhe o perfil (**Gerência** ou **Funcionário**) e digita a senha.
+
+<p align="center">
+  <a href="docs/01-login.png"><img src="docs/01-login.png" alt="Tela de login" width="100%"></a>
+</p>
+
+<br>
+
+### 2️⃣ Tela principal
+
+Menu de navegação no topo, resumo da ocupação (veículos estacionados, vagas disponíveis e tarifa) e atalhos para as principais operações.
+
+<p align="center">
+  <a href="docs/02-tela-principal.png"><img src="docs/02-tela-principal.png" alt="Tela principal" width="100%"></a>
+</p>
+
+<br>
+
+### 3️⃣ Entrada de veículos
+
+Cadastro de **placa, modelo, data e horário de entrada**, com contador de vagas disponíveis.
+
+<p align="center">
+  <a href="docs/03-entrada.png"><img src="docs/03-entrada.png" alt="Entrada de veículos" width="100%"></a>
+</p>
+
+<br>
+
+### 4️⃣ Registro de saída
+
+Selecione o veículo na tabela, informe o horário de saída, veja a **permanência e o valor a pagar** e confirme.
+
+<p align="center">
+  <a href="docs/04-saida.png"><img src="docs/04-saida.png" alt="Registro de saída" width="100%"></a>
+</p>
+
+<br>
+
+### 5️⃣ Relatório operacional
+
+Disponível **somente para a gerência**: veículos estacionados, vagas, capacidade, total de registros, tarifa e **faturamento acumulado**.
+
+<p align="center">
+  <a href="docs/05-relatorio.png"><img src="docs/05-relatorio.png" alt="Relatório operacional" width="100%"></a>
+</p>
 
 ---
 
 ## 📑 Sumário
 
-1. [Sobre o projeto](#1-sobre-o-projeto)
-2. [Funcionalidades](#2-funcionalidades)
-3. [Acesso ao sistema](#3-acesso-ao-sistema)
-4. [Regras de negócio](#4-regras-de-negócio)
-5. [Arquitetura (MVC)](#5-arquitetura-mvc)
-6. [Estrutura do projeto](#6-estrutura-do-projeto)
-7. [Componentes Swing utilizados](#7-componentes-swing-utilizados)
-8. [Requisitos do trabalho × atendimento](#8-requisitos-do-trabalho--atendimento)
-9. [Como executar](#9-como-executar)
-10. [Como usar o sistema](#10-como-usar-o-sistema)
-11. [Roteiro de testes](#11-roteiro-de-testes)
-12. [Como personalizar](#12-como-personalizar)
-13. [Limitações conhecidas](#13-limitações-conhecidas)
-14. [Possíveis melhorias futuras](#14-possíveis-melhorias-futuras)
-15. [Tecnologias](#15-tecnologias)
+1. [Funcionalidades](#funcionalidades)
+2. [Acesso ao sistema](#acesso)
+3. [Regras de negócio](#regras)
+4. [Arquitetura (MVC)](#arquitetura)
+5. [Estrutura do projeto](#estrutura)
+6. [Componentes Swing utilizados](#swing)
+7. [Requisitos do trabalho × atendimento](#requisitos)
+8. [Como executar](#executar)
+9. [Como usar o sistema](#uso)
+10. [Roteiro de testes](#testes)
+11. [Como personalizar](#personalizar)
+12. [Limitações e melhorias](#limitacoes)
+13. [Tecnologias](#tecnologias)
 
 ---
 
-## 1. Sobre o projeto
+<a id="funcionalidades"></a>
 
-O **ParkControl** é uma aplicação desktop para controlar a **entrada e a saída de veículos**, a **ocupação das vagas** e os **valores cobrados** em um estacionamento.
+## ✨ 1. Funcionalidades
 
-O sistema é de uso **interno**: apenas **gerência** e **funcionários** têm acesso. O cliente do estacionamento não interage com a aplicação.
+### Funcionalidades do tema (obrigatórias)
 
-Foi desenvolvido em **Java puro (Java SE)**, com interface gráfica em **Java Swing**, arquitetura **MVC** e armazenamento de dados **somente em memória** (`ArrayList`).
+| Nº | Funcionalidade | Descrição | Tela |
+|:-:|---|---|---|
+| 1 | 🚙 **Registro de entrada** | Cadastra placa, modelo, data e horário de entrada | Entrada |
+| 2 | 📋 **Listagem de veículos** | Exibe os veículos estacionados em uma `JTable` | Consulta |
+| 3 | 🔎 **Pesquisa por placa** | Localiza veículos (placa inteira ou parte dela) e mostra a situação: *Estacionado* ou *Saiu* | Consulta |
+| 4 | 🚪 **Registro de saída** | Informa data e horário de saída e encerra a permanência | Saída |
+| 5 | ⏱️ **Cálculo de permanência** | Calcula o tempo total estacionado, em horas e minutos | Saída |
+| 6 | 💰 **Cálculo de cobrança** | Valor devido: **R$ 5,00 por hora ou fração**, mínimo de 1 hora | Saída |
+| 7 | 📊 **Relatório operacional** | Veículos estacionados, vagas disponíveis e faturamento acumulado | Relatório |
 
----
+### Extras implementados
 
-## 2. Funcionalidades
-
-| Nº | Funcionalidade | Onde está |
-|---|---|---|
-| 1 | **Registro de entrada** — cadastra placa, modelo, data e horário de entrada | Tela de Entrada |
-| 2 | **Listagem de veículos** — exibe os veículos estacionados em uma `JTable` | Tela de Consulta |
-| 3 | **Pesquisa por placa** — localiza veículos (pela placa inteira ou parte dela) e mostra a situação (Estacionado ou Saiu) | Tela de Consulta |
-| 4 | **Registro de saída** — informa data e horário de saída e encerra a permanência | Tela de Saída |
-| 5 | **Cálculo de permanência** — calcula o tempo total estacionado (horas e minutos) | Tela de Saída |
-| 6 | **Cálculo de cobrança** — valor devido pela tarifa de **R$ 5,00 por hora ou fração**, com mínimo de 1 hora | Tela de Saída |
-| 7 | **Relatório operacional** — veículos estacionados, vagas disponíveis e faturamento acumulado | Tela de Relatório (somente gerência) |
-
-### Funcionalidades adicionais
-
-- **Login com dois perfis** (Gerência e Funcionário), pois o sistema é restrito à equipe.
-- **Relatório restrito à gerência**, porque mostra o faturamento.
-- **Prévia da cobrança** antes de confirmar a saída.
-- **Seleção do veículo pela tabela** na tela de saída (clique na linha para preencher a placa).
-- Botão **"Usar data/hora atual"** nos formulários.
-- **Resumo na tela principal** com veículos estacionados, vagas disponíveis e tarifa.
+- 🔐 **Login com dois perfis** (Gerência e Funcionário), pois o sistema é de uso interno.
+- 🛡️ **Relatório restrito à gerência**, porque exibe o faturamento.
+- 👀 **Prévia da cobrança** antes de confirmar a saída.
+- 🖱️ **Seleção do veículo pela tabela** na tela de saída (clique na linha e a placa é preenchida).
+- 🕒 Botão **"Usar data/hora atual"** nos formulários.
+- 📈 **Resumo na tela principal** com ocupação e tarifa.
 
 ---
 
-## 3. Acesso ao sistema
+<a id="acesso"></a>
+
+## 🔐 2. Acesso ao sistema
 
 | Perfil | Senha | Permissões |
 |---|---|---|
-| **Gerência** | `gerente123` | Entrada, consulta, saída e **relatório operacional** |
-| **Funcionário** | `func123` | Entrada, consulta e saída (relatório bloqueado) |
+| 👔 **Gerência** | `gerente123` | Entrada, consulta, saída e **relatório operacional** |
+| 🧑‍💼 **Funcionário** | `func123` | Entrada, consulta e saída (**relatório bloqueado**) |
 
-As senhas ficam no arquivo `src/model/Perfil.java` e podem ser alteradas.
+As senhas ficam em `src/model/Perfil.java` e podem ser alteradas.
 
-> **Observação:** as senhas são fixas no código porque o trabalho não permite banco de dados nem armazenamento externo. Em um sistema real, elas ficariam criptografadas em um banco.
+> [!NOTE]
+> As senhas são fixas no código porque o trabalho não permite banco de dados nem armazenamento externo. Em um sistema real, elas ficariam criptografadas em um banco.
 
 ---
 
-## 4. Regras de negócio
+<a id="regras"></a>
 
-- **Capacidade:** 20 vagas (constante `CAPACIDADE` em `Estacionamento.java`).
-- **Tarifa:** R$ 5,00 por hora ou fração (constante `TARIFA_POR_HORA` em `Estacionamento.java`).
-- **Cobrança:** o tempo é arredondado **para cima** em horas inteiras. O mínimo cobrado é 1 hora.
+## 📏 3. Regras de negócio
+
+### Cobrança
+
+O tempo é arredondado **para cima**, em horas inteiras, e o mínimo cobrado é de **1 hora**.
 
 | Permanência | Horas cobradas | Valor |
-|---|---|---|
+|:-:|:-:|:-:|
 | 10 min | 1 | R$ 5,00 |
 | 1h 00min | 1 | R$ 5,00 |
 | 1h 01min | 2 | R$ 10,00 |
 | 2h 10min | 3 | R$ 15,00 |
 
-- **Placa:** aceita o formato antigo (`ABC1234`) e o Mercosul (`ABC1D23`). Letras minúsculas, espaços e hífen são normalizados (`abc-1234` vira `ABC1234`).
-- **Não é permitido:**
-  - registrar entrada de uma placa que já está estacionada;
-  - registrar entrada com o estacionamento lotado;
-  - registrar saída de um veículo que não está estacionado;
-  - registrar saída com data/hora anterior à entrada;
-  - informar modelo vazio, placa inválida ou data/hora inválida.
-- **Faturamento:** soma de todos os valores cobrados nas saídas confirmadas.
+### Validações
+
+| Situação | Resultado |
+|---|---|
+| Placa fora do padrão (`ABC1234` ou `ABC1D23`) | ❌ Erro de placa inválida |
+| Modelo vazio | ❌ Erro |
+| Data ou hora inválida (ex.: `31/02/2026`) | ❌ Erro |
+| Entrada de placa que já está estacionada | ❌ Erro de duplicidade |
+| Entrada com o estacionamento lotado (20 vagas) | ❌ Erro de lotação |
+| Saída de veículo que não está estacionado | ❌ Erro |
+| Saída anterior ao horário de entrada | ❌ Erro |
+
+- **Placas:** letras minúsculas, espaços e hífen são normalizados (`abc-1234` vira `ABC1234`).
+- **Faturamento:** soma dos valores cobrados em todas as saídas confirmadas.
 
 ---
 
-## 5. Arquitetura (MVC)
+<a id="arquitetura"></a>
+
+## 🏗️ 4. Arquitetura (MVC)
 
 ```
 ┌──────────┐   eventos    ┌──────────────┐   operações   ┌───────────┐
@@ -154,11 +209,11 @@ As senhas ficam no arquivo `src/model/Perfil.java` e podem ser alteradas.
 
 | Camada | Responsabilidade | Classes |
 |---|---|---|
-| **Model** | Dados e regras de negócio: classes Java, validações de regra, cálculos e coleção em memória | `Veiculo`, `Estacionamento`, `Perfil` |
-| **View** | Telas Swing: exibe informações e recebe as ações do usuário. **Não contém regra de negócio** | `TelaLogin`, `TelaPrincipal`, `TelaEntrada`, `TelaConsulta`, `TelaSaida`, `TelaRelatorio`, `TelaBase`, `TabelaVeiculos`, `Tema`, `PainelHero` |
-| **Controller** | Recebe os eventos da View, valida e converte os dados digitados (placa, data, hora) e chama o Model | `EstacionamentoController` |
+| 🗃️ **Model** | Dados e regras de negócio: classes Java, cálculos e coleção em memória | `Veiculo`, `Estacionamento`, `Perfil` |
+| 🖥️ **View** | Telas Swing: exibe informações e recebe as ações do usuário. **Sem regra de negócio** | `TelaLogin`, `TelaPrincipal`, `TelaEntrada`, `TelaConsulta`, `TelaSaida`, `TelaRelatorio`, `TelaBase`, `TabelaVeiculos`, `Tema`, `PainelHero` |
+| 🎛️ **Controller** | Recebe os eventos, valida e converte os dados digitados e chama o Model | `EstacionamentoController` |
 
-### Fluxo de exemplo: registrar uma entrada
+### Exemplo de fluxo: registrar uma entrada
 
 1. O usuário preenche o formulário em `TelaEntrada` e clica em **Registrar entrada**.
 2. A View chama `controller.registrarEntrada(placa, modelo, data, hora)`.
@@ -166,9 +221,47 @@ As senhas ficam no arquivo `src/model/Perfil.java` e podem ser alteradas.
 4. O Model aplica as regras (placa duplicada, vagas) e grava o `Veiculo` no `ArrayList`.
 5. Se algo estiver errado, uma `IllegalArgumentException` sobe até a View, que mostra a mensagem em um `JOptionPane`.
 
+<details>
+<summary><b>📚 Ver a descrição de cada classe</b></summary>
+
+<br>
+
+**Model**
+
+| Classe | Descrição |
+|---|---|
+| `Perfil` | `enum` com os perfis de acesso (Gerência e Funcionário) e suas senhas. |
+| `Veiculo` | Dados de um veículo: placa, modelo, entrada, saída e valor cobrado. Informa se ainda está estacionado. |
+| `Estacionamento` | Guarda os veículos em um `ArrayList` e implementa cadastrar, localizar, listar, calcular permanência, calcular valor e registrar saída. Mantém o faturamento acumulado. |
+
+**Controller**
+
+| Classe | Descrição |
+|---|---|
+| `EstacionamentoController` | Autenticação e perfil logado, validação da placa, conversão de data e hora (`dd/MM/aaaa HH:mm`), montagem dos resumos e das linhas da tabela, formatação de moeda e duração. |
+
+**View**
+
+| Classe | Descrição |
+|---|---|
+| `TelaLogin` | Tela de acesso (perfil e senha). |
+| `TelaPrincipal` | Menu de navegação, resumo da ocupação e atalhos para as demais telas. |
+| `TelaEntrada` | Formulário de registro de entrada. |
+| `TelaConsulta` | Pesquisa por placa e listagem em `JTable`, com filtro (`JComboBox`). |
+| `TelaSaida` | Registro de saída com prévia de permanência e cobrança. |
+| `TelaRelatorio` | Indicadores operacionais e faturamento (somente gerência). |
+| `TelaBase` | Classe base das telas internas: layout padrão e retorno ao menu. |
+| `TabelaVeiculos` | `JTable` estilizada, reutilizada nas telas de consulta e saída. |
+| `Tema` | Paleta de cores, fontes e componentes visuais (botão e cartão arredondados, campos). |
+| `PainelHero` | Cartão laranja com o carro desenhado em Java2D. |
+
+</details>
+
 ---
 
-## 6. Estrutura do projeto
+<a id="estrutura"></a>
+
+## 📁 5. Estrutura do projeto
 
 ```
 EstacionamentoGrupo08
@@ -201,92 +294,77 @@ EstacionamentoGrupo08
         └── TelaRelatorio.java
 ```
 
-### Descrição das classes
+---
 
-**Model**
+<a id="swing"></a>
 
-| Classe | Descrição |
-|---|---|
-| `Perfil` | `enum` com os perfis de acesso (Gerência e Funcionário) e suas senhas. |
-| `Veiculo` | Dados de um veículo: placa, modelo, entrada, saída e valor cobrado. Informa se ainda está estacionado. |
-| `Estacionamento` | Guarda os veículos em um `ArrayList` e implementa cadastrar, localizar, listar, calcular permanência, calcular valor e registrar saída. Mantém o faturamento acumulado. |
+## 🧩 6. Componentes Swing utilizados
 
-**Controller**
+`JFrame` • `JPanel` • `JLabel` • `JTextField` • `JPasswordField` • `JButton` • `JComboBox` • `JTable` • `JScrollPane` • `JTextArea` • `JOptionPane`
 
-| Classe | Descrição |
-|---|---|
-| `EstacionamentoController` | Autenticação e perfil logado, validação da placa, conversão de data e hora (`dd/MM/aaaa HH:mm`), montagem dos resumos e das linhas da tabela, formatação de moeda e duração. |
-
-**View**
-
-| Classe | Descrição |
-|---|---|
-| `TelaLogin` | Tela de acesso (perfil e senha). |
-| `TelaPrincipal` | Menu de navegação, resumo da ocupação e atalhos para as demais telas. |
-| `TelaEntrada` | Formulário de registro de entrada. |
-| `TelaConsulta` | Pesquisa por placa e listagem em `JTable`, com filtro (`JComboBox`). |
-| `TelaSaida` | Registro de saída com prévia de permanência e cobrança. |
-| `TelaRelatorio` | Indicadores operacionais e faturamento (somente gerência). |
-| `TelaBase` | Classe base das telas internas: layout padrão e retorno ao menu. |
-| `TabelaVeiculos` | `JTable` estilizada, reutilizada nas telas de consulta e saída. |
-| `Tema` | Paleta de cores, fontes e componentes visuais (botão e cartão arredondados, campos). |
-| `PainelHero` | Cartão laranja com o carro desenhado em Java2D. |
+Além de **`Graphics2D` (Java2D)** para o visual personalizado (botões e cartões arredondados, sombras e a ilustração do carro).
 
 ---
 
-## 7. Componentes Swing utilizados
+<a id="requisitos"></a>
 
-`JFrame`, `JPanel`, `JLabel`, `JTextField`, `JPasswordField`, `JButton`, `JComboBox`, `JTable`, `JScrollPane`, `JTextArea` e `JOptionPane`, além de `Graphics2D` (Java2D) para o visual personalizado.
-
----
-
-## 8. Requisitos do trabalho × atendimento
+## ✅ 7. Requisitos do trabalho × atendimento
 
 | Requisito | Atendimento |
 |---|---|
-| Arquitetura MVC | Pacotes `model`, `view` e `controller` |
-| Interface exclusivamente em Java Swing | Todas as telas em Swing/Java2D |
-| Tela principal com nome do sistema e navegação | `TelaPrincipal` |
-| Formulários com `JTextField`, `JComboBox` e `JButton` | `TelaEntrada`, `TelaConsulta`, `TelaSaida` |
-| Tabelas `JTable` | `TabelaVeiculos` |
-| Mensagens de confirmação e erro com `JOptionPane` | Todas as telas |
-| Validações para impedir dados incorretos | `EstacionamentoController` e `Estacionamento` |
-| Navegação com retorno à janela principal | Botão "Voltar ao menu" e fechar janela |
-| Armazenamento em memória (`ArrayList`) | `Estacionamento.veiculos` |
-| Dados disponíveis ao fechar e reabrir janelas | Um único `Estacionamento` vive durante toda a execução |
-| Sem banco de dados, web, JavaFX ou frameworks externos | Apenas a biblioteca padrão do Java |
-| Sete funcionalidades do tema | Ver seção 2 |
+| Arquitetura MVC | ✅ Pacotes `model`, `view` e `controller` |
+| Interface exclusivamente em Java Swing | ✅ Todas as telas em Swing/Java2D |
+| Tela principal com nome do sistema e navegação | ✅ `TelaPrincipal` |
+| Formulários com `JTextField`, `JComboBox` e `JButton` | ✅ `TelaEntrada`, `TelaConsulta`, `TelaSaida` |
+| Tabelas `JTable` | ✅ `TabelaVeiculos` |
+| Mensagens de confirmação e erro com `JOptionPane` | ✅ Todas as telas |
+| Validações para impedir dados incorretos | ✅ `EstacionamentoController` e `Estacionamento` |
+| Navegação com retorno à janela principal | ✅ Botão "Voltar ao menu" e fechar a janela |
+| Armazenamento em memória (`ArrayList`) | ✅ `Estacionamento.veiculos` |
+| Dados disponíveis ao fechar e reabrir janelas | ✅ Um único `Estacionamento` vive durante toda a execução |
+| Sem banco de dados, web, JavaFX ou frameworks externos | ✅ Apenas a biblioteca padrão do Java |
+| Sete funcionalidades do tema | ✅ Ver seção 1 |
 
 ---
 
-## 9. Como executar
+<a id="executar"></a>
+
+## ▶️ 8. Como executar
 
 ### Pré-requisitos
 
-- **JDK 11 ou superior** instalado.
-- **Eclipse IDE for Java Developers** (ou outra IDE Java).
+- ☕ **JDK 11 ou superior**
+- 🧰 **Eclipse IDE for Java Developers** (ou outra IDE Java)
 
-### Opção A: clonar do GitHub e abrir no Eclipse
+### Opção A — Clonar do GitHub e abrir no Eclipse
 
 ```bash
 git clone https://github.com/SEU-USUARIO/NOME-DO-REPOSITORIO.git
 ```
 
-1. No Eclipse, vá em **File > New > Java Project**, dê o nome `EstacionamentoGrupo08` e desmarque **Create module-info.java**.
-2. Copie a pasta `src` do repositório clonado para dentro do projeto (substitua a `src` vazia) e atualize o projeto com **F5**.
+1. No Eclipse, vá em **File > New > Java Project**, dê o nome `EstacionamentoGrupo08` e **desmarque** *Create module-info.java*.
+2. Copie a pasta `src` do repositório clonado para dentro do projeto (substituindo a `src` vazia) e atualize com **F5**.
 3. Clique com o botão direito no projeto, escolha **Properties > Resource** e defina **Text file encoding** como **UTF-8**.
 4. Clique com o botão direito em `Main.java` e escolha **Run As > Java Application**.
 
-### Opção B: montar o projeto do zero no Eclipse
+<details>
+<summary><b>🛠️ Opção B — Montar o projeto do zero no Eclipse</b></summary>
 
-1. **File > New > Java Project**, nome `EstacionamentoGrupo08`. Desmarque **Create module-info.java**.
+<br>
+
+1. **File > New > Java Project**, nome `EstacionamentoGrupo08`. Desmarque *Create module-info.java*.
 2. Defina o encoding **UTF-8** em **Properties > Resource**.
 3. Crie os pacotes `model`, `controller` e `view` dentro de `src`.
-4. Crie cada classe no pacote indicado na seção 6 e cole o código correspondente.
+4. Crie cada classe no pacote indicado na seção 5 e cole o código correspondente.
 5. Salve tudo com **File > Save All** (Ctrl+Shift+S).
 6. Clique com o botão direito em `Main.java` e escolha **Run As > Java Application**.
 
-### Opção C: compilar e executar pelo terminal
+</details>
+
+<details>
+<summary><b>💻 Opção C — Compilar e executar pelo terminal</b></summary>
+
+<br>
 
 Na raiz do repositório:
 
@@ -304,7 +382,12 @@ javac -encoding UTF-8 -d out @fontes.txt
 java -cp out Main
 ```
 
-### Problemas comuns
+</details>
+
+<details>
+<summary><b>🧯 Problemas comuns e soluções</b></summary>
+
+<br>
 
 | Mensagem ou sintoma | Solução |
 |---|---|
@@ -313,25 +396,38 @@ java -cp out Main
 | Acentos quebrados (`Ã§`) | Defina o encoding UTF-8 e cole o código novamente. |
 | Erro mencionando `module java.desktop` | Apague o arquivo `module-info.java` do projeto. |
 
----
-
-## 10. Como usar o sistema
-
-1. **Login:** escolha o perfil, digite a senha e clique em **Entrar** (ou pressione Enter).
-2. **Registrar entrada:** menu **Entrada**. Informe placa, modelo, data e horário (ou use "Usar data/hora atual") e clique em **Registrar entrada**.
-3. **Consultar veículos:** menu **Consulta**. Veja os estacionados, troque o filtro para "Todos os registros" ou pesquise por placa.
-4. **Registrar saída:** menu **Saída**. Clique no veículo na tabela, informe data e horário de saída, use **Calcular cobrança** para ver a prévia e depois **Confirmar saída**.
-5. **Relatório:** menu **Relatório** (somente gerência). Mostra ocupação e faturamento; use **Atualizar** para recarregar.
-6. **Encerrar sessão:** botão no canto superior direito da tela principal.
-
-**Formatos de entrada:** data `dd/MM/aaaa` (ex.: `25/11/2026`) e hora `HH:mm` (ex.: `14:30`).
+</details>
 
 ---
 
-## 11. Roteiro de testes
+<a id="uso"></a>
+
+## 🧭 9. Como usar o sistema
+
+| Passo | Ação | Como fazer |
+|:-:|---|---|
+| 1 | **Entrar** | Escolha o perfil, digite a senha e clique em **Entrar** (ou pressione Enter) |
+| 2 | **Registrar entrada** | Menu **Entrada** → informe placa, modelo, data e horário (ou use *Usar data/hora atual*) → **Registrar entrada** |
+| 3 | **Consultar veículos** | Menu **Consulta** → veja os estacionados, troque o filtro para *Todos os registros* ou pesquise por placa |
+| 4 | **Registrar saída** | Menu **Saída** → clique no veículo na tabela → informe data e horário → **Calcular cobrança** → **Confirmar saída** |
+| 5 | **Ver o relatório** | Menu **Relatório** (somente gerência) → use **Atualizar** para recarregar |
+| 6 | **Sair** | Botão **Encerrar sessão**, no canto superior direito |
+
+📝 **Formatos aceitos:** data `dd/MM/aaaa` (ex.: `25/11/2026`) e hora `HH:mm` (ex.: `14:30`).
+
+---
+
+<a id="testes"></a>
+
+## 🧪 10. Roteiro de testes
+
+<details>
+<summary><b>📋 Ver os 13 casos de teste</b></summary>
+
+<br>
 
 | Nº | Ação | Resultado esperado |
-|---|---|---|
+|:-:|---|---|
 | 1 | Entrar como **Funcionário** (`func123`) | Menu abre com o **Relatório bloqueado** |
 | 2 | Registrar `ABC1D23`, modelo "Gol" | Mensagem de sucesso; vagas disponíveis diminuem em 1 |
 | 3 | Registrar `ABC1D23` novamente | Erro de placa já estacionada |
@@ -346,42 +442,62 @@ java -cp out Main
 | 12 | Fechar e reabrir uma tela | Os dados continuam disponíveis |
 | 13 | Registrar 21 veículos diferentes | Erro de estacionamento lotado no 21º |
 
+</details>
+
 ---
 
-## 12. Como personalizar
+<a id="personalizar"></a>
+
+## 🎨 11. Como personalizar
 
 | O que mudar | Onde |
 |---|---|
-| Valor da tarifa | `Estacionamento.TARIFA_POR_HORA` |
-| Número de vagas | `Estacionamento.CAPACIDADE` |
-| Regra de cobrança | método `calcularValor()` em `Estacionamento.java` |
-| Senhas dos perfis | `Perfil.java` |
-| Cores do sistema | constantes no topo de `Tema.java` |
-| Nome da marca | método `logo()` em `Tema.java` |
+| 💵 Valor da tarifa | `Estacionamento.TARIFA_POR_HORA` |
+| 🅿️ Número de vagas | `Estacionamento.CAPACIDADE` |
+| 🧮 Regra de cobrança | método `calcularValor()` em `Estacionamento.java` |
+| 🔑 Senhas dos perfis | `Perfil.java` |
+| 🎨 Cores do sistema | constantes no topo de `Tema.java` |
+| 🏷️ Nome da marca | método `logo()` em `Tema.java` |
 
 ---
 
-## 13. Limitações conhecidas
+<a id="limitacoes"></a>
+
+## ⚠️ 12. Limitações e melhorias
+
+### Limitações conhecidas
 
 - Os dados ficam **somente em memória**: ao fechar a aplicação, tudo é perdido (conforme a especificação do trabalho).
 - Os horários são digitados manualmente, com o botão de data/hora atual como atalho.
 - A capacidade e a tarifa são constantes no código, sem tela de configuração.
 - As senhas são fixas no código.
 
-## 14. Possíveis melhorias futuras
+### Possíveis melhorias futuras
 
-- Persistência em arquivo ou banco de dados.
-- Tela de configuração de tarifa e capacidade.
-- Tarifas diferentes por tipo de veículo (carro e moto).
-- Emissão de comprovante de saída.
-- Cadastro de usuários com senha criptografada.
+- 💾 Persistência em arquivo ou banco de dados.
+- ⚙️ Tela de configuração de tarifa e capacidade.
+- 🏍️ Tarifas diferentes por tipo de veículo (carro e moto).
+- 🧾 Emissão de comprovante de saída.
+- 🔒 Cadastro de usuários com senha criptografada.
 
 ---
 
-## 15. Tecnologias
+<a id="tecnologias"></a>
 
-- Java SE (JDK 11 ou superior)
-- Java Swing e Java2D
-- Arquitetura MVC
-- `ArrayList` para armazenamento em memória
-- Eclipse IDE
+## 🛠️ 13. Tecnologias
+
+- ☕ Java SE (JDK 11 ou superior)
+- 🖼️ Java Swing e Java2D
+- 🏗️ Arquitetura MVC
+- 📦 `ArrayList` para armazenamento em memória
+- 🧰 Eclipse IDE
+
+---
+
+<div align="center">
+
+**ParkControl** • Grupo 08 • Iniciação à Programação
+
+Feito com ☕ e Java Swing
+
+</div>
