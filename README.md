@@ -21,6 +21,37 @@
 
 ---
 
+## 🖼️ Telas do sistema
+
+<table>
+  <tr>
+    <td align="center" width="20%">
+      <a href="docs/01-login.png"><img src="docs/01-login.png" alt="Tela de login" width="100%"></a><br>
+      <sub><b>1. Login</b></sub>
+    </td>
+    <td align="center" width="20%">
+      <a href="docs/02-tela-principal.png"><img src="docs/02-tela-principal.png" alt="Tela principal" width="100%"></a><br>
+      <sub><b>2. Tela principal</b></sub>
+    </td>
+    <td align="center" width="20%">
+      <a href="docs/03-entrada.png"><img src="docs/03-entrada.png" alt="Entrada de veículos" width="100%"></a><br>
+      <sub><b>3. Entrada de veículos</b></sub>
+    </td>
+    <td align="center" width="20%">
+      <a href="docs/04-saida.png"><img src="docs/04-saida.png" alt="Registro de saída" width="100%"></a><br>
+      <sub><b>4. Registro de saída</b></sub>
+    </td>
+    <td align="center" width="20%">
+      <a href="docs/05-relatorio.png"><img src="docs/05-relatorio.png" alt="Relatório operacional" width="100%"></a><br>
+      <sub><b>5. Relatório operacional</b></sub>
+    </td>
+  </tr>
+</table>
+
+> Clique em uma imagem para vê-la em tamanho grande.
+
+---
+
 ## 📑 Sumário
 
 1. [Sobre o projeto](#1-sobre-o-projeto)
@@ -143,6 +174,12 @@ As senhas ficam no arquivo `src/model/Perfil.java` e podem ser alteradas.
 EstacionamentoGrupo08
 ├── README.md
 ├── .gitignore
+├── docs
+│   ├── 01-login.png
+│   ├── 02-tela-principal.png
+│   ├── 03-entrada.png
+│   ├── 04-saida.png
+│   └── 05-relatorio.png
 └── src
     ├── Main.java
     ├── model
