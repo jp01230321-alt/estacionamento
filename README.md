@@ -13,7 +13,7 @@ Controle de **entrada e saída de veículos**, **ocupação de vagas** e **cobra
 
 **Disciplina:** Iniciação à Programação  •  **Grupo 08**
 
-[🖼️ Telas](#telas) • [✨ Funcionalidades](#funcionalidades) • [🔐 Acesso](#acesso) • [🏗️ Arquitetura](#arquitetura) • [▶️ Como executar](#executar) • [🧪 Testes](#testes)
+[🖼️ Telas](#telas) • [🎬 Vídeo](#video) • [✨ Funcionalidades](#funcionalidades) • [🔐 Acesso](#acesso) • [🏗️ Arquitetura](#arquitetura) • [▶️ Como executar](#executar) • [🧪 Testes](#testes)
 
 </div>
 
@@ -30,6 +30,7 @@ Controle de **entrada e saída de veículos**, **ocupação de vagas** e **cobra
 | **Armazenamento** | Somente em memória (`ArrayList`) |
 | **Tarifa** | R$ 5,00 por hora ou fração |
 | **Vagas** | 20 |
+| **Demonstração** | [🎬 Assistir ao vídeo no YouTube](https://youtu.be/R_hIxrgFGwI?si=VdEksum9xui6Pkl1) |
 
 ---
 
@@ -99,6 +100,48 @@ Disponível **somente para a gerência**: veículos estacionados, vagas, capacid
 <p align="center">
   <a href="docs/05-relatorio.png"><img src="docs/05-relatorio.png" alt="Relatório operacional" width="100%"></a>
 </p>
+
+---
+
+<a id="video"></a>
+
+## 🎬 Vídeo de demonstração
+
+Assista ao sistema funcionando: login, cadastro de entrada, consulta, registro de saída com cálculo da cobrança e relatório da gerência.
+
+<p align="center">
+  <a href="https://youtu.be/R_hIxrgFGwI?si=VdEksum9xui6Pkl1" title="Assistir no YouTube">
+    <img src="https://img.youtube.com/vi/R_hIxrgFGwI/maxresdefault.jpg" alt="Vídeo de demonstração do ParkControl no YouTube" width="100%">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://youtu.be/R_hIxrgFGwI?si=VdEksum9xui6Pkl1">
+    <img src="https://img.shields.io/badge/▶%20Assistir%20no%20YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Assistir no YouTube">
+  </a>
+</p>
+
+> 💡 Clique na imagem ou no botão vermelho para abrir o vídeo no YouTube.
+
+### O que é mostrado no vídeo
+
+| Etapa | O que acontece |
+|:-:|---|
+| 1 | 🔐 **Login** com os perfis de Funcionário e de Gerência |
+| 2 | 🚙 **Registro de entrada** de veículos (placa, modelo, data e horário) |
+| 3 | ⚠️ **Validações** funcionando (placa inválida, placa duplicada, data inválida) |
+| 4 | 🔎 **Consulta** de veículos estacionados e pesquisa por placa |
+| 5 | 🚪 **Registro de saída** com cálculo de permanência e cobrança |
+| 6 | 📊 **Relatório operacional** com o faturamento acumulado (somente gerência) |
+
+<details>
+<summary><b>🔗 Link direto do vídeo</b></summary>
+
+<br>
+
+https://youtu.be/R_hIxrgFGwI?si=VdEksum9xui6Pkl1
+
+</details>
 
 ---
 
@@ -497,6 +540,8 @@ java -cp out Main
 <div align="center">
 
 **ParkControl** • Grupo 08 • Iniciação à Programação
+
+🎬 [Assistir à demonstração no YouTube](https://youtu.be/R_hIxrgFGwI?si=VdEksum9xui6Pkl1)
 
 Feito com ☕ e Java Swing
 
